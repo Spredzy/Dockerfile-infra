@@ -1,0 +1,8 @@
+{{ node }}:
+  image: spredzy:infra
+  command: /sbin/init
+  privileged: true
+  volumes:
+    - /sys/fs/cgroup:/sys/fs/cgroup:ro 
+    - {{ tmp_path }}/site.pp:/var/tmp/site.pp
+    - /home/spredzy/.ssh/id_rsa.pub:/root/.ssh/authorized_keys
